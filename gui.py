@@ -8,7 +8,7 @@ class API():
 
 def main():
     api = API()
-    webview.create_window('note.ms protector', 'file://D:/notems-protector/web/index.html', js_api=api)
+    webview.create_window('note.ms protector', 'file://D:/notems-protect/web/index.html', js_api=api)
     webview.start()
 
 if __name__ == '__main__':
