@@ -1,0 +1,59 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <textarea id="text"></textarea>
+        <span>网址名：</span>
+        <input id="target"></input>
+        <button onclick="start()">开始保护</button>
+        <style>
+            body, html {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                font-family: Arial, STXihei, 华文细黑, microsoft yahei, 微软雅黑, SimSun, 宋体, Heiti, 黑体, sans-serif !important;
+                background: url(note.ms/meta/bg.png) top left repeat #ebeef2;;
+            }
+            #text {
+                margin: 10px;
+                width: calc(100% - 20px);
+                height: calc(100% - 60px);
+            }
+            #text {
+                resize: none;
+                overflow-y: auto;
+                border-radius: 3px;
+                box-sizing: border-box;
+                border: none;
+                padding: .7em .8em;
+                color: #333;
+                font-size: 1.1em;
+                box-shadow: 0 0 5px 0 #e4e4e4;
+                font-family: Arial, STXihei, 华文细黑, microsoft yahei, 微软雅黑, SimSun, 宋体, Heiti, 黑体, sans-serif !important;
+            }
+            * {
+                outline: none;
+            }
+            #target {
+                border: none;
+                margin-right: 10px;
+            }
+            span {
+                margin-left: 10px;
+            }
+            button {
+                border: none;
+                background-color: white;
+                font-family: Arial, STXihei, 华文细黑, microsoft yahei, 微软雅黑, SimSun, 宋体, Heiti, 黑体, sans-serif !important;
+            }
+        </style>
+        <script>
+            function start() {
+                var text = document.getElementById('text').value;
+                var target = document.getElementById('target').value;
+                window.pywebview.api.protect(text, target);
+            }
+        </script>
+    </body>
+</html>
