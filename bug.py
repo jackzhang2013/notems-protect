@@ -3,8 +3,18 @@ from selenium.webdriver.chrome.service import Service # 这里中的chrome要改
 from selenium.webdriver import Keys
 from time import sleep
 import pyperclip
+import os, sys
 
-driver_path = r'D:\software\Miniconda\envs\font\chromedriver-win64\chromedriver-win64\chromedriver.exe' # 改成你自己的webdriver的位置
+def base_path(path):
+    if getattr(sys, 'frozen', None):
+        basedir = sys._MEIPASS
+    else:
+        basedir = os.path.dirname(__file__)
+    return os.path.join(basedir, path)
+
+print(os.path.exists(base_path('./chromedriver.exe')))
+
+driver_path = base_path(r'./chromedriver.exe') # 改成你自己的webdriver的位置
 flag = True
 
 def protect(overlay_text, target_name="target", force_editing=True):
