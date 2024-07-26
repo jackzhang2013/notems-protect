@@ -5,6 +5,7 @@ from time import sleep
 import pyperclip
 
 driver_path = r'D:\software\Miniconda\envs\font\chromedriver-win64\chromedriver-win64\chromedriver.exe' # 改成你自己的webdriver的位置
+flag = True
 
 def protect(overlay_text, target_name="target", force_editing=True):
     url = f'https://note.ms/{target_name}'
@@ -23,7 +24,11 @@ def protect(overlay_text, target_name="target", force_editing=True):
 
     pyperclip.copy(overlay_text)
 
-    while True:
+    while flag:
         element.clear()
         element.send_keys(Keys.CONTROL, 'v')
         sleep(1)
+
+def stop():
+    global flag
+    flag = False
